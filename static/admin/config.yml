@@ -1,8 +1,5 @@
 backend:
   name: git-gateway
-  accept_roles:
-    - admin
-    - editor
 media_folder: static/assets
 public_folder: assets
 site_url: https://awakened.netlify.com/
