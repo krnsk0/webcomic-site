@@ -3,13 +3,22 @@ backend:
   repo: krnsk0/webcomic-site
 media_folder: static/assets
 public_folder: assets
+site_url: https://awakened.netlify.com/
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: comic
+    identifier_field: name
+    extension: json
+    label: Comic
+    folder: comics
     create: true
+    delete: true
     fields:
-      - { name: path, label: Path }
+      - { name: number, label: Number }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: image, label: Image }
       - { name: body, label: Body, widget: markdown }
