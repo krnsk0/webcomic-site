@@ -10,16 +10,26 @@ slug:
   sanitize_replacement: "_"
 collections:
   - name: comics
-    identifier_field: name
+    identifier_field: number
     extension: json
     label: Comics
     label_singular: Comic
     folder: comics
     create: true
     delete: true
+    editor:
+      preview: false
     fields:
-      - { name: number, label: Number }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: image, label: Image }
-      - { name: body, label: Body, widget: markdown }
+      - label: Number
+        name: number
+        widget: number
+        valueType: int
+        min: 1
+      - { label: Image, name: image, widget: file }
+      - label: Date
+        name: date
+        widget: datetime
+        format: "MM-DD-YYYY"
+      - label: Body
+        name: body
+        widget: markdown
