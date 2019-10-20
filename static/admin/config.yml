@@ -19,8 +19,8 @@ collections:
     editor:
       preview: false
     fields:
-      - label: Number
-        name: number
+      - label: Page Number
+        name: page
         widget: number
         valueType: int
         min: 1
@@ -33,3 +33,27 @@ collections:
         name: body
         required: false
         widget: markdown
+  - name: chapters
+    identifier_field: number
+    extension: json
+    label: Chapters
+    label_singuler: Chapter
+    folder: chapters
+    create: true
+    delete: true
+    editor:
+      preview: false
+    fields:
+      - label: Chapter Number
+        name: number
+        widget: number
+        valueType: int
+        min: 1
+      - label: Chapter Title
+        name: title
+        widget: string
+      - label: First Page Number
+        name: page_number
+        widget: number
+        valueType: int
+        min: 1
