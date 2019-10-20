@@ -52,7 +52,7 @@ collections:
       - label: Chapter Title
         name: title
         widget: string
-      - label: First Page Number
+      - label: First Page Number of Chapter
         name: page_number
         widget: number
         valueType: int
