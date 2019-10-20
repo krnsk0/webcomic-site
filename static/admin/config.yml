@@ -10,7 +10,7 @@ slug:
 collections:
   - name: pages
     identifier_field: page_number
-    extension: markdown
+    extension: md
     label: Pages
     label_singular: Page
     folder: data/pages
@@ -32,7 +32,7 @@ collections:
       - label: Body
         name: body
         required: false
-        widget: markdown
+        widget: md
   - name: chapters
     identifier_field: number
     extension: markdown
