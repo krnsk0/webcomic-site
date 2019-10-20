@@ -13,7 +13,7 @@ collections:
     extension: json
     label: Comics
     label_singular: Comic
-    folder: comics
+    folder: data/comics
     create: true
     delete: true
     editor:
@@ -38,7 +38,7 @@ collections:
     extension: json
     label: Chapters
     label_singuler: Chapter
-    folder: chapters
+    folder: data/chapters
     create: true
     delete: true
     editor:
