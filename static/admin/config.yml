@@ -9,7 +9,7 @@ slug:
   sanitize_replacement: "_"
 collections:
   - name: comics
-    identifier_field: number
+    identifier_field: page
     extension: json
     label: Comics
     label_singular: Comic
