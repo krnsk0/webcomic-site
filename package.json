@@ -17,11 +17,13 @@
     "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-netlify-cms": "^4.1.25",
     "gatsby-plugin-offline": "^3.0.16",
+    "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-json": "^2.2.15",
     "netlify-cms-app": "^2.9.7",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "eslint-config-react-app": "^5.0.2",

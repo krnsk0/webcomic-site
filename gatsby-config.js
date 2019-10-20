@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: `Awakened`,
+    description: `a webcomic`,
+    author: `Hannah Utain-Evans`,
+  },
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-json`,
@@ -22,6 +27,8 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    // next line must be after gatsby-plugin-manifest
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 }

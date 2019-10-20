@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
+import SEO from "../components/seo"
 
 export default props => {
   const chapters = props.data.allChaptersJson.edges
   return (
     <div>
+      <SEO title={`Chapters`} />
       <div>
         <b>Chapters</b>
       </div>
