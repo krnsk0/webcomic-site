@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
-media_folder: static/images
-public_folder: images
+media_folder: data/images
+# public_folder: images
 site_url: https://awakened.netlify.com/
 slug:
   encoding: "ascii"
