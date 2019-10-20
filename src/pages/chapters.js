@@ -28,16 +28,16 @@ export default props => {
   )
 }
 
-export const query = graphql`
-  query {
-    allChaptersJson {
-      edges {
-        node {
-          number
-          page_number
-          title
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     allChaptersJson {
+//       edges {
+//         node {
+//           number
+//           page_number
+//           title
+//         }
+//       }
+//     }
+//   }
+// `
