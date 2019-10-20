@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
-media_folder: static/assets
-public_folder: assets
+media_folder: static/images
+public_folder: images
 site_url: https://awakened.netlify.com/
 slug:
   encoding: "ascii"
@@ -31,4 +31,5 @@ collections:
         format: "MM-DD-YYYY"
       - label: Body
         name: body
+        required: false
         widget: markdown
