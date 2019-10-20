@@ -8,19 +8,19 @@ slug:
   clean_accents: true
   sanitize_replacement: "_"
 collections:
-  - name: comics
-    identifier_field: page
+  - name: pages
+    identifier_field: page_number
     extension: json
-    label: Comics
-    label_singular: Comic
-    folder: data/comics
+    label: Pages
+    label_singular: Page
+    folder: data/pages
     create: true
     delete: true
     editor:
       preview: false
     fields:
       - label: Page Number
-        name: page
+        name: page_number
         widget: number
         valueType: int
         min: 1
