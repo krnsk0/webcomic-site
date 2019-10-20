@@ -30,5 +30,7 @@ module.exports = {
     // next line must be after gatsby-plugin-manifest
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
