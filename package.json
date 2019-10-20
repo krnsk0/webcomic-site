@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "gatsby": "^2.16.1",
+    "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-netlify-cms": "^4.1.25",
+    "gatsby-plugin-offline": "^3.0.16",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-json": "^2.2.15",
     "netlify-cms-app": "^2.9.7",
