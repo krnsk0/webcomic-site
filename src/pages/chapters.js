@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 
 export default props => {
-  const chapters = props.data.allChaptersJson.edges
+  const chapters = props.data.allMarkdownRemark.edges
   return (
     <div>
       <SEO title={`Chapters`} />
@@ -13,7 +13,7 @@ export default props => {
       </div>
       <div>
         {chapters.map(chapter => {
-          const { number, title, page_number } = chapter.node
+          const { number, title, page_number } = chapter.node.frontmatter
           console.log("number: ", number)
           return (
             <div key={number}>
@@ -28,16 +28,20 @@ export default props => {
   )
 }
 
-// export const query = graphql`
-//   query {
-//     allChaptersJson {
-//       edges {
-//         node {
-//           number
-//           page_number
-//           title
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/.*/data/chapters/.*/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            page_number
+            number
+            title
+          }
+        }
+      }
+    }
+  }
+`
