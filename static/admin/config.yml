@@ -10,7 +10,7 @@ slug:
 collections:
   - name: pages
     identifier_field: page_number
-    extension: json
+    extension: markdown
     label: Pages
     label_singular: Page
     folder: data/pages
@@ -35,7 +35,7 @@ collections:
         widget: markdown
   - name: chapters
     identifier_field: number
-    extension: json
+    extension: markdown
     label: Chapters
     label_singuler: Chapter
     folder: data/chapters
