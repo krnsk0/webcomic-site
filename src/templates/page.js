@@ -1,12 +1,11 @@
 import React from "react"
-import SEO from "../components/seo"
+import Layout from "../components/layout"
 
 export default props => {
   const { body, date, image, page_number } = props.pageContext
 
   return (
-    <div>
-      <SEO title={`Page ${page_number}`} />
+    <Layout title={`Page ${page_number}`}>
       <div>
         Page number: <span>{page_number}</span>
       </div>
@@ -16,11 +15,7 @@ export default props => {
       <div>
         Body: <span>{body}</span>
       </div>
-      <img
-        src={image}
-        alt=""
-        style={{ maxWidth: "100%", height: "auto" }}
-      ></img>
-    </div>
+      <img src={image} alt=""></img>
+    </Layout>
   )
 }

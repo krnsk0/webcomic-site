@@ -1,13 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import SEO from "../components/seo"
+import Layout from "../components/layout"
 
 export default props => {
   const chapters = props.data.allMarkdownRemark.edges
   return (
-    <div>
-      <SEO title={`Chapters`} />
+    <Layout title={`Chapters`}>
       <div>
         <b>Chapters</b>
       </div>
@@ -24,7 +23,7 @@ export default props => {
           )
         })}
       </div>
-    </div>
+    </Layout>
   )
 }
 
