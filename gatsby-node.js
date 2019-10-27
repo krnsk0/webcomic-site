@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
               html
             }
           }
+          totalCount
         }
       }
     `,
@@ -40,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
           image: edge.node.frontmatter.image,
           date: edge.node.frontmatter.date,
           body: edge.node.html,
+          total_count: result.data.allMarkdownRemark.totalCount,
         },
       })
     })
