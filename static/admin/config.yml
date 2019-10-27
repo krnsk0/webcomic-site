@@ -35,7 +35,7 @@ collections:
         widget: markdown
   - name: chapters
     identifier_field: number
-    extension: markdown
+    extension: md
     label: Chapters
     label_singuler: Chapter
     folder: data/chapters
