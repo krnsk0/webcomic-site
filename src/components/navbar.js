@@ -32,16 +32,18 @@ const NavLink = styled(Link)`
 export default ({ pageInfo }) => {
   return (
     <Navbar>
-      <Title>Navbar</Title>
-      <PageLinks>
-        <NavLink to="/page/1">First</NavLink>
-        <NavLink to={`/page/${pageInfo.previousPage}`}>Prev</NavLink>
-        <NavLink to={`/page/${pageInfo.nextPage}`}>Next</NavLink>
-        <NavLink to={`/page/${pageInfo.lastPage}`}>Last</NavLink>
-      </PageLinks>
+      <Title>Awakened</Title>
+      {pageInfo && (
+        <PageLinks>
+          <NavLink to="/page/1">First</NavLink>
+          <NavLink to={`/page/${pageInfo.previousPage}`}>Prev</NavLink>
+          <NavLink to={`/page/${pageInfo.nextPage}`}>Next</NavLink>
+          <NavLink to={`/page/${pageInfo.lastPage}`}>Last</NavLink>
+        </PageLinks>
+      )}
       <OtherLinks>
-        <NavLink to="/chapters">Chapters</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/chapters">Chapters</NavLink>
       </OtherLinks>
     </Navbar>
   )
