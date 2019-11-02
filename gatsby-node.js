@@ -30,10 +30,9 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog post pages.
     result.data.allMarkdownRemark.edges.forEach(edge => {
+      // make /page/page_number
       createPage({
-        // Path for this page — required
         path: `/page/${edge.node.frontmatter.page_number}`,
         component: pageTemplate,
         context: {
@@ -44,6 +43,24 @@ exports.createPages = ({ graphql, actions }) => {
           total_count: result.data.allMarkdownRemark.totalCount,
         },
       })
+
+      // if the last page, also make homepage
+      if (
+        result.data.allMarkdownRemark.totalCount ===
+        edge.node.frontmatter.page_number
+      ) {
+        createPage({
+          path: `/`,
+          component: pageTemplate,
+          context: {
+            page_number: edge.node.frontmatter.page_number,
+            image: edge.node.frontmatter.image,
+            date: edge.node.frontmatter.date,
+            body: edge.node.html,
+            total_count: result.data.allMarkdownRemark.totalCount,
+          },
+        })
+      }
     })
   })
 }
