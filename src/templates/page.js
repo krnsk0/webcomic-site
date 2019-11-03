@@ -44,7 +44,7 @@ export const query = graphql`
     file(relativePath: { eq: $image }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
