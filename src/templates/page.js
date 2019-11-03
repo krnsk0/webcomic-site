@@ -28,7 +28,9 @@ export default props => {
       <div>
         Body: <span>{body}</span>
       </div>
-      <div>{JSON.stringify(pageInfo)}</div>
+      <div>
+        Image: <span>{image}</span>
+      </div>
     </Layout>
   )
 }
