@@ -17,6 +17,11 @@ const Navbar = styled.nav`
   background-color: grey;
 `
 
+const TitleLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+`
+
 const Title = styled.h1`
   margin: 1em;
 `
@@ -32,7 +37,9 @@ const NavLink = styled(Link)`
 export default ({ pageInfo }) => {
   return (
     <Navbar>
-      <Title>Awakened</Title>
+      <TitleLink to="/">
+        <Title>Awakened</Title>
+      </TitleLink>
       {pageInfo && (
         <PageLinks>
           <NavLink to="/page/1">First</NavLink>
