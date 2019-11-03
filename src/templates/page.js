@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "@emotion/styled"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Image = styled.img`
   width: 100%;
@@ -8,6 +10,8 @@ const Image = styled.img`
 
 export default props => {
   const { body, date, image, page_number, total_count } = props.pageContext
+  console.log("props.data", props.data)
+  console.log("image", image)
 
   const pageInfo = {
     currentPage: page_number,
@@ -18,7 +22,7 @@ export default props => {
 
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
-      <Image src={image} alt=""></Image>
+      <Img fluid={props.data.file.childImageSharp.fluid} alt="" />
       <div>
         Page number: <span>{page_number}</span> of <span>{total_count}</span>
       </div>
@@ -34,3 +38,15 @@ export default props => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query($image: String) {
+    file(relativePath: { eq: $image }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
