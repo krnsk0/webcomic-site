@@ -1,5 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
+import styled from "@emotion/styled"
+
+const Image = styled.img`
+  width: 100%;
+`
 
 export default props => {
   const { body, date, image, page_number, total_count } = props.pageContext
@@ -13,7 +18,7 @@ export default props => {
 
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
-      <img src={image} alt=""></img>
+      <Image src={image} alt=""></Image>
       <div>
         Page number: <span>{page_number}</span> of <span>{total_count}</span>
       </div>
