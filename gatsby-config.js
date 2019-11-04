@@ -1,3 +1,5 @@
+const theme = require("./src/theme")
+
 module.exports = {
   siteMetadata: {
     title: `Awakened`,
@@ -34,5 +36,13 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: Object.values(theme.fonts).map(fontName => ({
+          family: fontName,
+        })),
+      },
+    },
   ],
 }

@@ -2,12 +2,16 @@ import React from "react"
 import CSSReset from "./cssreset"
 import SEO from "../components/seo"
 import Navbar from "../components/navbar"
+import Footer from "../components/footer"
+import { ThemeProvider } from "emotion-theming"
+const theme = require("../theme")
 
 export default ({ children, title, pageInfo }) => (
-  <React.Fragment>
+  <ThemeProvider theme={theme}>
     <SEO title={title} />
     <CSSReset />
     <Navbar pageInfo={pageInfo} />
     {children}
-  </React.Fragment>
+    <Footer />
+  </ThemeProvider>
 )

@@ -6,6 +6,7 @@ const Navbar = styled.nav`
   /* postion */
   position: sticky;
   top: 0px;
+  z-index: 2;
 
   /* flex container */
   display: flex;
@@ -14,16 +15,18 @@ const Navbar = styled.nav`
   align-items: center;
 
   /* style */
-  background-color: grey;
+  background-color: ${props => props.theme.colors.navbarBg};
 `
 
 const TitleLink = styled(Link)`
-  color: black;
+  color: ${props => props.theme.colors.header};
   text-decoration: none;
 `
 
 const Title = styled.h1`
-  margin: 1em;
+  margin: 0.2em;
+  font-family: ${props => props.theme.fonts.header};
+  font-size: 2em;
 `
 
 const PageLinks = styled.div``
@@ -31,6 +34,8 @@ const PageLinks = styled.div``
 const OtherLinks = styled.div``
 
 const NavLink = styled(Link)`
+  color: ${props => props.theme.colors.links};
+  font-family: ${props => props.theme.fonts.body};
   margin: 1em;
 `
 
@@ -38,7 +43,7 @@ export default ({ pageInfo }) => {
   return (
     <Navbar>
       <TitleLink to="/">
-        <Title>Awakened</Title>
+        <Title>AWAKENED</Title>
       </TitleLink>
       {pageInfo && (
         <PageLinks>

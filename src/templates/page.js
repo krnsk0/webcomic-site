@@ -4,14 +4,12 @@ import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Image = styled.img`
-  width: 100%;
+const Image = styled(Img)`
+  margin: 0 auto;
 `
 
 export default props => {
-  const { body, date, image, page_number, total_count } = props.pageContext
-  console.log("props.data", props.data)
-  console.log("image", image)
+  const { page_number, total_count } = props.pageContext
 
   const pageInfo = {
     currentPage: page_number,
@@ -22,8 +20,8 @@ export default props => {
 
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
-      <Img fluid={props.data.file.childImageSharp.fluid} alt="" />
-      <div>
+      <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+      {/* <div>
         Page number: <span>{page_number}</span> of <span>{total_count}</span>
       </div>
       <div>
@@ -34,7 +32,7 @@ export default props => {
       </div>
       <div>
         Image: <span>{image}</span>
-      </div>
+      </div> */}
     </Layout>
   )
 }
@@ -43,8 +41,8 @@ export const query = graphql`
   query($image: String) {
     file(relativePath: { eq: $image }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid_tracedSVG
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
