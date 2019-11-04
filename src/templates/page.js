@@ -29,18 +29,6 @@ export default props => {
       <ImageContainer>
         <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
       </ImageContainer>
-      {/* <div>
-        Page number: <span>{page_number}</span> of <span>{total_count}</span>
-      </div>
-      <div>
-        Date: <span>{date}</span>
-      </div>
-      <div>
-        Body: <span>{body}</span>
-      </div>
-      <div>
-        Image: <span>{image}</span>
-      </div> */}
     </Layout>
   )
 }
