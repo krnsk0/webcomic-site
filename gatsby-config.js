@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Awakened`,
     description: `a webcomic`,
-    author: `Hannah Utain-Evans`,
+    author: `HUE`,
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,

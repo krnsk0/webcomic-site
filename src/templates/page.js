@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 const ImageContainer = styled.div`
   margin: 0 auto;
-  padding: 2em;
+  padding: 6em;
   background-color: ${props => props.theme.colors.pageBg};
 `
 
@@ -38,7 +38,7 @@ export const query = graphql`
     file(relativePath: { eq: $image }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
