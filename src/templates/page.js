@@ -4,6 +4,12 @@ import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
+const ImageContainer = styled.div`
+  margin: 0 auto;
+  padding: 2em;
+  background-color: ${props => props.theme.colors.pageBg};
+`
+
 const Image = styled(Img)`
   margin: 0 auto;
 `
@@ -20,7 +26,9 @@ export default props => {
 
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
-      <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+      <ImageContainer>
+        <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+      </ImageContainer>
       {/* <div>
         Page number: <span>{page_number}</span> of <span>{total_count}</span>
       </div>
