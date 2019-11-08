@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 const ImageContainer = styled.div`
   margin: 0 auto;
-  padding: 6em;
+  padding: 4em 6em 4em 6em;
   background-color: ${props => props.theme.colors.pageBg};
 `
 

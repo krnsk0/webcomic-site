@@ -29,14 +29,17 @@ const Title = styled.h1`
   font-size: 2em;
 `
 
-const PageLinks = styled.div``
+const PageLinks = styled.div`
+  font-size: 2em;
+`
 
 const OtherLinks = styled.div``
 
 const NavLink = styled(Link)`
   color: ${props => props.theme.colors.links};
   font-family: ${props => props.theme.fonts.body};
-  margin: 1em;
+  margin: 0.3em;
+  text-decoration: none;
 `
 
 export default ({ pageInfo }) => {
@@ -47,10 +50,10 @@ export default ({ pageInfo }) => {
       </TitleLink>
       {pageInfo && (
         <PageLinks>
-          <NavLink to="/page/1">First</NavLink>
-          <NavLink to={`/page/${pageInfo.previousPage}`}>Prev</NavLink>
-          <NavLink to={`/page/${pageInfo.nextPage}`}>Next</NavLink>
-          <NavLink to={`/page/${pageInfo.lastPage}`}>Last</NavLink>
+          <NavLink to="/page/1">&lt;&lt;</NavLink>
+          <NavLink to={`/page/${pageInfo.previousPage}`}>&lt;</NavLink>
+          <NavLink to={`/page/${pageInfo.nextPage}`}>&gt;</NavLink>
+          <NavLink to={`/page/${pageInfo.lastPage}`}>&gt;&gt;</NavLink>
         </PageLinks>
       )}
       <OtherLinks>
