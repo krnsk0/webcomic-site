@@ -29,10 +29,6 @@ const Title = styled.h1`
   font-size: 2em;
 `
 
-const PageLinks = styled.div`
-  font-size: 2em;
-`
-
 const OtherLinks = styled.div``
 
 const NavLink = styled(Link)`
@@ -48,14 +44,6 @@ export default ({ pageInfo }) => {
       <TitleLink to="/">
         <Title>AWAKENED</Title>
       </TitleLink>
-      {pageInfo && (
-        <PageLinks>
-          <NavLink to="/page/1">&lt;&lt;</NavLink>
-          <NavLink to={`/page/${pageInfo.previousPage}`}>&lt;</NavLink>
-          <NavLink to={`/page/${pageInfo.nextPage}`}>&gt;</NavLink>
-          <NavLink to={`/page/${pageInfo.lastPage}`}>&gt;&gt;</NavLink>
-        </PageLinks>
-      )}
       <OtherLinks>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/chapters">Chapters</NavLink>

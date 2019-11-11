@@ -5,14 +5,11 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ImageContainer = styled.div`
-  margin: 0 auto;
-  padding: 4em 6em 4em 6em;
+  height: calc(100vh - 5em);
   background-color: ${props => props.theme.colors.pageBg};
 `
 
-const Image = styled(Img)`
-  margin: 0 auto;
-`
+const Image = styled(Img)``
 
 export default props => {
   const { page_number, total_count } = props.pageContext

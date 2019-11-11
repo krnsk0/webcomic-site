@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const Footer = styled.nav`
-  /* postion */
-  position: static;
+  /* postion and size */
+  position: fixed;
   bottom: 0px;
+  width: 100%;
 
   /* flex container */
   display: flex;
@@ -17,27 +18,28 @@ const Footer = styled.nav`
   background-color: ${props => props.theme.colors.navbarBg};
 `
 
-const Copyright = styled.div`
-  color: ${props => props.theme.colors.header};
+const PageLinks = styled.div`
+  font-size: 2em;
+`
+
+const NavLink = styled(Link)`
+  color: ${props => props.theme.colors.links};
   font-family: ${props => props.theme.fonts.body};
-  margin: 1em;
+  margin: 0.3em;
+  text-decoration: none;
 `
 
 export default ({ pageInfo }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author
-          }
-        }
-      }
-    `
-  )
   return (
     <Footer>
-      <Copyright>© 2019 {site.siteMetadata.author}</Copyright>
+      {pageInfo && (
+        <PageLinks>
+          <NavLink to="/page/1">&lt;&lt;</NavLink>
+          <NavLink to={`/page/${pageInfo.previousPage}`}>&lt;</NavLink>
+          <NavLink to={`/page/${pageInfo.nextPage}`}>&gt;</NavLink>
+          <NavLink to={`/page/${pageInfo.lastPage}`}>&gt;&gt;</NavLink>
+        </PageLinks>
+      )}
     </Footer>
   )
 }
