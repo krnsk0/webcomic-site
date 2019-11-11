@@ -1,17 +1,12 @@
-const colorTheme = {
-  one: "#4357AD",
-  two: "#0D1F2D",
-  three: "#E4DFDA",
-  four: "#546A7B",
-  five: "#9EA3B0",
-}
+// "#546A7B"
 
 module.exports = {
   colors: {
-    navbarBg: colorTheme.two,
-    pageBg: colorTheme.one,
-    header: colorTheme.three,
-    links: colorTheme.five,
+    navbarBg: "#0D1F2D",
+    pageBg: "#4357AD",
+    header: "#E4DFDA",
+    link: "#9EA3B0",
+    inactiveLink: "#113754",
   },
   fonts: {
     header: "Fredoka One",

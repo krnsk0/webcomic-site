@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 const Navbar = styled.nav`
   /* postion */
@@ -32,13 +32,37 @@ const Title = styled.h1`
 const OtherLinks = styled.div``
 
 const NavLink = styled(Link)`
-  color: ${props => props.theme.colors.links};
+  color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
   margin: 0.3em;
   text-decoration: none;
 `
 
 export default ({ pageInfo }) => {
+  // navigate between pages using arrow keys but only on comic pages
+  useEffect(() => {
+    const handleUserKeyPress = event => {
+      const { keyCode } = event
+
+      if (
+        keyCode === 39 &&
+        pageInfo &&
+        pageInfo.currentPage < pageInfo.lastPage
+      ) {
+        event.preventDefault()
+        navigate(`/page/${pageInfo.nextPage}`)
+      } else if (keyCode === 37 && pageInfo && pageInfo.currentPage > 1) {
+        event.preventDefault()
+        navigate(`/page/${pageInfo.previousPage}`)
+      }
+    }
+    window.addEventListener("keydown", handleUserKeyPress)
+
+    return () => {
+      window.removeEventListener("keydown", handleUserKeyPress)
+    }
+  }, [pageInfo])
+
   return (
     <Navbar>
       <TitleLink to="/">
