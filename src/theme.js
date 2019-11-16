@@ -7,6 +7,7 @@ module.exports = {
     header: "#E4DFDA",
     link: "#9EA3B0",
     inactiveLink: "#113754",
+    bodyText: "#D4CFCA",
   },
   fonts: {
     header: "Fredoka One",
