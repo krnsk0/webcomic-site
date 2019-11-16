@@ -23,12 +23,7 @@ export default props => {
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
       <ImageContainer>
-        {/* <Image fluid={props.data.file.childImageSharp.fluid} alt="" /> */}
-        <div
-          style={{ backgroundColor: "red", width: "200px", height: "400px" }}
-        >
-          test
-        </div>
+        <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
       </ImageContainer>
     </Layout>
   )

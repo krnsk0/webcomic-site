@@ -9,9 +9,10 @@ import Footer from "../components/footer"
 
 const theme = require("../theme")
 
-const fontSizeStyle = css`
+const globalStyles = css`
   html {
     font-size: 4vw;
+    background-color: ${theme.colors.pageBg};
   }
 `
 
@@ -22,7 +23,7 @@ export default ({ children, title, pageInfo }) => {
     <ThemeProvider theme={theme}>
       <SEO title={title} />
       <CSSReset />
-      <Global styles={fontSizeStyle} />
+      <Global styles={globalStyles} />
       <Navbar pageInfo={pageInfo} />
       {children}
       <Footer pageInfo={pageInfo} />
