@@ -5,8 +5,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ImageContainer = styled.div`
-  height: calc(100vh - 5em);
-  background-color: ${props => props.theme.colors.pageBg};
+  border: 1px green solid;
 `
 
 const Image = styled(Img)``
@@ -24,7 +23,12 @@ export default props => {
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
       <ImageContainer>
-        <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+        {/* <Image fluid={props.data.file.childImageSharp.fluid} alt="" /> */}
+        <div
+          style={{ backgroundColor: "red", width: "200px", height: "400px" }}
+        >
+          test
+        </div>
       </ImageContainer>
     </Layout>
   )
