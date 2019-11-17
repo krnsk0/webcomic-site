@@ -23,10 +23,9 @@ const Navbar = styled.nav`
 const MediaQueryContainer = styled.div`
   flex: 1;
   display: none;
-  display: flex;
-  justify-content: center;
   @media (min-height: 600px) and (orientation: landscape) {
-    display: inherit;
+    display: flex;
+    justify-content: center;
   }
 `
 
