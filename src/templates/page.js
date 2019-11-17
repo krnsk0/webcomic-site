@@ -33,6 +33,13 @@ const Text = styled.div`
 
 const Image = styled(Img)`
   width: 100%;
+
+  /* don't let it get bigger than 1032px */
+  /* excludes all mobile but ipad pro landscape */
+  max-width: 1032px;
+  @media (min-width: 1032px) {
+    margin: 5em auto 5em auto;
+  }
 `
 
 const FooterSpacer = styled.div`
@@ -64,7 +71,7 @@ export const query = graphql`
   query($image: String) {
     file(relativePath: { eq: $image }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 1032) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
