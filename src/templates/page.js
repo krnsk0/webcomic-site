@@ -14,6 +14,7 @@ const ImageContainer = styled.div`
 
 const Text = styled.div`
   color: ${props => props.theme.colors.bodyText};
+  font-family: ${props => props.theme.fonts.body};
   text-align: center;
   margin: 1em;
 `
@@ -35,7 +36,7 @@ export default props => {
       <ImageContainer>
         <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
         {/* <div style={{ height: "100px", border: "1px red solid" }}>test</div> */}
-        <Text>testing</Text>
+        <Text dangerouslySetInnerHTML={{ __html: props.pageContext.body }} />
       </ImageContainer>
     </Layout>
   )
