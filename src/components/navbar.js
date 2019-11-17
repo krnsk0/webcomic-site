@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "@emotion/styled"
 import { Link, navigate } from "gatsby"
+import PageLinks from "./pagelinks"
 
 const Navbar = styled.nav`
   /* postion */
@@ -17,6 +18,13 @@ const Navbar = styled.nav`
 
   /* style */
   background-color: ${props => props.theme.colors.navbarBg};
+`
+
+const MediaQueryContainer = styled.div`
+  display: none;
+  @media (min-height: 600px) and (orientation: landscape) {
+    display: inherit;
+  }
 `
 
 const TitleLink = styled(Link)`
@@ -37,6 +45,7 @@ const NavLink = styled(Link)`
   font-family: ${props => props.theme.fonts.body};
   margin-right: 0.8em;
   text-decoration: none;
+  font-size: 1.2em;
 `
 
 const NavbarSpacer = styled.div`
@@ -74,6 +83,9 @@ export default ({ pageInfo }) => {
         <TitleLink to="/">
           <Title>AWAKENED</Title>
         </TitleLink>
+        <MediaQueryContainer>
+          {pageInfo && <PageLinks pageInfo={pageInfo} />}
+        </MediaQueryContainer>
         <OtherLinks>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/chapters">Chapters</NavLink>

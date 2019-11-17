@@ -12,7 +12,8 @@ const PageContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 600px) {
+  @media (min-width: 560px) {
+    display: inherit;
   }
 
   @media (orientation: landscape) {

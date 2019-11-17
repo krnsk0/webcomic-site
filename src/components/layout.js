@@ -10,7 +10,11 @@ const theme = require("../theme")
 
 const globalStyles = css`
   html {
-    font-size: 4vw;
+    font-size: 3.5vw;
+    @media (min-height: 600px) and (orientation: landscape) {
+      font-size: 20px;
+    }
+
     background-color: ${theme.colors.pageBg};
   }
 `

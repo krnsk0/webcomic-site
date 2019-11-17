@@ -16,6 +16,10 @@ const Footer = styled.nav`
 
   /* style */
   background-color: ${props => props.theme.colors.navbarBg};
+
+  @media (min-height: 600px) and (orientation: landscape) {
+    display: none;
+  }
 `
 
 export default ({ pageInfo }) => {
