@@ -5,11 +5,13 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ImageContainer = styled.div`
-  height: 100vh;
-  /* display: flex;
+  /* Footer height: 2.3em */
+  /* Navbar height: 2.8em */
+  height: calc(100vh - 2.3em - 2.8em);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; */
-  border: 1px solid green;
+  align-items: center;
 `
 
 const Text = styled.div`
@@ -19,7 +21,9 @@ const Text = styled.div`
   margin: 1em;
 `
 
-const Image = styled(Img)``
+const Image = styled(Img)`
+  width: 100%;
+`
 
 export default props => {
   const { page_number, total_count } = props.pageContext
@@ -35,9 +39,9 @@ export default props => {
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
       <ImageContainer>
         <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
-        {/* <div style={{ height: "100px", border: "1px red solid" }}>test</div> */}
         <Text dangerouslySetInnerHTML={{ __html: props.pageContext.body }} />
       </ImageContainer>
+      {/* <FooterSpacer /> */}
     </Layout>
   )
 }

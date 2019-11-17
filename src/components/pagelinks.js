@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
 const PageLinksWrapper = styled.div`
-  font-size: 2em;
+  font-size: 2.2em;
 `
 
 const ActiveLink = styled(Link)`

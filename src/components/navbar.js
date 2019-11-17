@@ -5,6 +5,7 @@ import { Link, navigate } from "gatsby"
 const Navbar = styled.nav`
   /* postion */
   position: sticky;
+  width: 100%;
   top: 0px;
   z-index: 2;
 
@@ -34,7 +35,7 @@ const OtherLinks = styled.div``
 const NavLink = styled(Link)`
   color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
-  margin: 0.3em;
+  margin-right: 0.8em;
   text-decoration: none;
 `
 

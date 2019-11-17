@@ -1,7 +1,6 @@
 import React from "react"
 import { ThemeProvider } from "emotion-theming"
 import { css, Global } from "@emotion/core"
-
 import CSSReset from "./cssreset"
 import SEO from "../components/seo"
 import Navbar from "../components/navbar"
@@ -25,6 +24,7 @@ export default ({ children, title, pageInfo }) => {
       <CSSReset />
       <Global styles={globalStyles} />
       <Navbar pageInfo={pageInfo} />
+      {/* <NavbarSpacer /> */}
       {children}
       <Footer pageInfo={pageInfo} />
     </ThemeProvider>
