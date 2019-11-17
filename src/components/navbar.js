@@ -21,7 +21,10 @@ const Navbar = styled.nav`
 `
 
 const MediaQueryContainer = styled.div`
+  flex: 1;
   display: none;
+  display: flex;
+  justify-content: center;
   @media (min-height: 600px) and (orientation: landscape) {
     display: inherit;
   }
@@ -30,6 +33,7 @@ const MediaQueryContainer = styled.div`
 const TitleLink = styled(Link)`
   color: ${props => props.theme.colors.header};
   text-decoration: none;
+  flex: 1;
 `
 
 const Title = styled.h1`
@@ -38,7 +42,11 @@ const Title = styled.h1`
   font-size: 2em;
 `
 
-const OtherLinks = styled.div``
+const OtherLinks = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+`
 
 const NavLink = styled(Link)`
   color: ${props => props.theme.colors.link};
