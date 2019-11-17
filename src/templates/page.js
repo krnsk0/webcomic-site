@@ -7,10 +7,10 @@ import Img from "gatsby-image"
 const PageContainer = styled.div`
   /* subtract's navbar height */
   height: calc(100vh - 2.8em);
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 
   /*  switch off flex and make main page scrollable
       when wide enough to not see whole comic at once */
