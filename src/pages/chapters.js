@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 
-const ChapterContainer = styled.div`
+const PageContainer = styled.div`
   /* position */
   position: relative;
   top: 2em;
@@ -16,23 +16,40 @@ const ChapterContainer = styled.div`
   justify-content: center;
 `
 
+const ChapterBox = styled.nav`
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* style */
+  background-color: ${props => props.theme.colors.navbarBg};
+`
+
 const Title = styled.h2`
-  margin: 1em;
+  color: ${props => props.theme.colors.header};
+  font-family: ${props => props.theme.fonts.header};
+  margin-top: 1em;
 `
 
 const ChapterLinkContainer = styled.li`
   text-align: center;
+  margin: 1em;
 `
 
-const ChapterLink = styled(Link)``
+const ChapterLink = styled(Link)`
+  color: ${props => props.theme.colors.link};
+  font-family: ${props => props.theme.fonts.body};
+`
 
 export default props => {
   const chapters = props.data.allMarkdownRemark.edges
   return (
     <Layout title={`Chapters`}>
-      <ChapterContainer>
-        <Title>Chapters</Title>
-        <nav>
+      <PageContainer>
+        <ChapterBox>
+          <Title>CHAPTERS</Title>
           <ul>
             {chapters.map(chapter => {
               const { number, title, page_number } = chapter.node.frontmatter
@@ -45,8 +62,8 @@ export default props => {
               )
             })}
           </ul>
-        </nav>
-      </ChapterContainer>
+        </ChapterBox>
+      </PageContainer>
     </Layout>
   )
 }
