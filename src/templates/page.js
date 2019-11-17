@@ -4,14 +4,20 @@ import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const ImageContainer = styled.div`
-  /* Footer height: 2.3em */
-  /* Navbar height: 2.8em */
-  height: calc(100vh - 2.3em - 2.8em);
+const PageContainer = styled.div`
+  /* Subtracts navbar height: 2.8em */
+  height: calc(100vh - 2.3em);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 600px) {
+  }
+
+  @media (orientation: landscape) {
+    display: inherit;
+  }
 `
 
 const Text = styled.div`
@@ -23,6 +29,10 @@ const Text = styled.div`
 
 const Image = styled(Img)`
   width: 100%;
+`
+
+const FooterSpacer = styled.div`
+  height: 2.3em;
 `
 
 export default props => {
@@ -37,11 +47,11 @@ export default props => {
 
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
-      <ImageContainer>
+      <PageContainer>
         <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
         <Text dangerouslySetInnerHTML={{ __html: props.pageContext.body }} />
-      </ImageContainer>
-      {/* <FooterSpacer /> */}
+        <FooterSpacer />
+      </PageContainer>
     </Layout>
   )
 }
