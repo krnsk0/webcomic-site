@@ -12,10 +12,13 @@ const PageContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  /*  switch off flex and make main page scrollable
+      when wide enough to not see whole comic at once */
   @media (min-width: 560px) {
     display: inherit;
   }
 
+  /* always scrollable in landscape */
   @media (orientation: landscape) {
     display: inherit;
   }

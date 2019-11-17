@@ -23,6 +23,8 @@ const Navbar = styled.nav`
 const MediaQueryContainer = styled.div`
   flex: 1;
   display: none;
+
+  /* display the arrows on top on desktop and landscape iPad */
   @media (min-height: 600px) and (orientation: landscape) {
     display: flex;
     justify-content: center;

@@ -11,6 +11,13 @@ const theme = require("../theme")
 const globalStyles = css`
   html {
     font-size: 3.5vw;
+
+    /* smaller font on landscape */
+    @media (orientation: landscape) {
+      font-size: 2.2vw;
+    }
+
+    /* fixed font on desktop and landscape iPad */
     @media (min-height: 600px) and (orientation: landscape) {
       font-size: 20px;
     }
