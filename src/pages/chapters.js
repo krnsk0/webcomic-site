@@ -72,6 +72,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/.*/data/chapters/.*/" } }
+      sort: { fields: frontmatter___number }
     ) {
       edges {
         node {
