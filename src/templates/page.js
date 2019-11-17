@@ -36,7 +36,7 @@ const Image = styled(Img)`
 `
 
 const FooterSpacer = styled.div`
-  height: 2.3em;
+  height: 2.6em;
 `
 
 export default props => {

@@ -2,9 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
-const PageLinksWrapper = styled.div`
-  font-size: 2.2em;
-`
+const PageLinksWrapper = styled.div``
 
 const ActiveLink = styled(Link)`
   color: ${props => props.theme.colors.link};
