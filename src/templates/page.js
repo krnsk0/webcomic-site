@@ -5,8 +5,8 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const PageContainer = styled.div`
-  /* Subtracts navbar height: 2.8em */
-  height: calc(100vh - 2.3em);
+  /* subtract's navbar height */
+  height: calc(100vh - 2.8em);
   display: flex;
   flex-direction: column;
   justify-content: center;

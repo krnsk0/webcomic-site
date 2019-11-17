@@ -24,7 +24,6 @@ export default ({ children, title, pageInfo }) => {
       <CSSReset />
       <Global styles={globalStyles} />
       <Navbar pageInfo={pageInfo} />
-      {/* <NavbarSpacer /> */}
       {children}
       <Footer pageInfo={pageInfo} />
     </ThemeProvider>

@@ -4,7 +4,7 @@ import { Link, navigate } from "gatsby"
 
 const Navbar = styled.nav`
   /* postion */
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0px;
   z-index: 2;
@@ -39,6 +39,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
 `
 
+const NavbarSpacer = styled.div`
+  height: 2.8em;
+`
+
 export default ({ pageInfo }) => {
   // navigate between pages using arrow keys but only on comic pages
   useEffect(() => {
@@ -65,14 +69,17 @@ export default ({ pageInfo }) => {
   }, [pageInfo])
 
   return (
-    <Navbar>
-      <TitleLink to="/">
-        <Title>AWAKENED</Title>
-      </TitleLink>
-      <OtherLinks>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/chapters">Chapters</NavLink>
-      </OtherLinks>
-    </Navbar>
+    <React.Fragment>
+      <Navbar>
+        <TitleLink to="/">
+          <Title>AWAKENED</Title>
+        </TitleLink>
+        <OtherLinks>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/chapters">Chapters</NavLink>
+        </OtherLinks>
+      </Navbar>
+      <NavbarSpacer />
+    </React.Fragment>
   )
 }
