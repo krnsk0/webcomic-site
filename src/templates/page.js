@@ -20,7 +20,7 @@ const Image = styled(Img)`
   /* excludes all mobile but ipad pro landscape */
   max-width: 1032px;
   @media (min-width: 1032px) {
-    margin: 5em auto 5em auto;
+    margin: 5em auto 1em auto;
   }
 `
 
