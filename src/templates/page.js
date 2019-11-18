@@ -4,25 +4,7 @@ import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const PageContainer = styled.div`
-  /* subtract's navbar height */
-  height: calc(100vh - 2.8em);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /*  switch off flex and make main page scrollable
-      when wide enough to not see whole comic at once */
-  @media (min-width: 560px) {
-    display: inherit;
-  }
-
-  /* always scrollable in landscape */
-  @media (orientation: landscape) {
-    display: inherit;
-  }
-`
+const PageContainer = styled.div``
 
 const Text = styled.div`
   color: ${props => props.theme.colors.bodyText};
