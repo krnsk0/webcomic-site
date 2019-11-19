@@ -24,7 +24,6 @@ const AboutBox = styled.div`
 
   /* style */
   background-color: ${props => props.theme.colors.navbarBg};
-
   padding: 2em 1em 2em 1em;
 `
 
@@ -52,7 +51,7 @@ const OffsiteLink = styled.a`
 
 const InstagramIcon = styled(FaInstagram)`
   position: relative;
-  top: 4px;
+  top: 2px;
   margin-right: 0.2em;
 `
 
