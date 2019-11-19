@@ -51,8 +51,13 @@ const OffsiteLink = styled.a`
 
 const InstagramIcon = styled(FaInstagram)`
   position: relative;
-  top: 2px;
+  top: 5px;
+  /* on mobile, no offset  */
+  @media (hover: none) {
+    top: 2px;
+  }
   margin-right: 0.2em;
+  font-size: 1.1em;
 `
 
 const Spacer = styled.div`
