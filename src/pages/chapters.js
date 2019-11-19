@@ -41,6 +41,9 @@ const ChapterLinkContainer = styled.li`
 const ChapterLink = styled(Link)`
   color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
+  &:hover {
+    color: ${props => props.theme.colors.hoveredLink};
+  }
 `
 
 export default props => {

@@ -7,6 +7,7 @@ module.exports = {
     header: "#E4DFDA",
     link: "#9EA3B0",
     inactiveLink: "#113754",
+    hoveredLink: "#8bcbe0",
     bodyText: "#D4CFCA",
   },
   fonts: {

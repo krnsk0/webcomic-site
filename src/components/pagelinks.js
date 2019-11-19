@@ -9,6 +9,9 @@ const ActiveLink = styled(Link)`
   font-family: ${props => props.theme.fonts.body};
   margin: 0.3em;
   text-decoration: none;
+  &:hover {
+    color: ${props => props.theme.colors.hoveredLink};
+  }
 `
 
 const InactiveLink = styled.span`

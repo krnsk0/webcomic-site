@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import styled from "@emotion/styled"
 import { Link, navigate } from "gatsby"
 import PageLinks from "./pagelinks"
+import { FaInstagram } from "react-icons/fa"
 
 const Navbar = styled.nav`
   /* postion */
@@ -50,12 +51,30 @@ const OtherLinks = styled.div`
   justify-content: flex-end;
 `
 
+const InstagramIcon = styled(FaInstagram)`
+  position: relative;
+  top: 0px;
+  margin-right: 0.6em;
+  font-size: 1.25em;
+`
+
+const OffsiteLink = styled.a`
+  color: ${props => props.theme.colors.link};
+  &:hover {
+    color: ${props => props.theme.colors.hoveredLink};
+  }
+`
+
 const NavLink = styled(Link)`
   color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
-  margin-right: 0.8em;
+  margin-right: 0.7em;
   text-decoration: none;
   font-size: 1.2em;
+
+  &:hover {
+    color: ${props => props.theme.colors.hoveredLink};
+  }
 `
 
 const NavbarSpacer = styled.div`
@@ -99,6 +118,9 @@ export default ({ pageInfo }) => {
         <OtherLinks>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/chapters">Chapters</NavLink>
+          <OffsiteLink href="https://www.instagram.com/hueartdump/">
+            <InstagramIcon />
+          </OffsiteLink>
         </OtherLinks>
       </Navbar>
       <NavbarSpacer />

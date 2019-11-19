@@ -31,6 +31,7 @@ const AboutBox = styled.div`
 const Title = styled.h2`
   color: ${props => props.theme.colors.header};
   font-family: ${props => props.theme.fonts.header};
+  font-size: 1.3em;
 `
 
 const Content = styled.div`
@@ -38,16 +39,20 @@ const Content = styled.div`
   margin-top: 1em;
   color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
+  font-size: 1em;
 `
 
 const OffsiteLink = styled.a`
   color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
+  &:hover {
+    color: ${props => props.theme.colors.hoveredLink};
+  }
 `
 
 const InstagramIcon = styled(FaInstagram)`
   position: relative;
-  top: 6px;
+  top: 4px;
   margin-right: 0.2em;
 `
 
@@ -61,6 +66,7 @@ export default props => {
       <PageContainer>
         <AboutBox>
           <Title>AUTHOR</Title>
+          <Content>A webcomic by HUE</Content>
           <Content>
             <OffsiteLink href="https://www.instagram.com/hueartdump/">
               <InstagramIcon />

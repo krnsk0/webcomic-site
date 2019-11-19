@@ -50,6 +50,5 @@ module.exports = {
         trackingId: "UA-317656-3",
       },
     },
-    `gatsby-plugin-favicon`,
   ],
 }
