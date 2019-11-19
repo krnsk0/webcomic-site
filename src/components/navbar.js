@@ -54,20 +54,6 @@ const OtherLinks = styled.div`
   justify-content: flex-end;
 `
 
-const InstagramIcon = styled(FaInstagram)`
-  position: relative;
-  top: 0px;
-  margin-right: 0.6em;
-  font-size: 1.25em;
-`
-
-const OffsiteLink = styled.a`
-  color: ${props => props.theme.colors.link};
-  &:hover {
-    color: ${props => props.theme.colors.hoveredLink};
-  }
-`
-
 const NavLink = styled(Link)`
   color: ${props => props.theme.colors.link};
   font-family: ${props => props.theme.fonts.body};
@@ -121,9 +107,6 @@ export default ({ pageInfo }) => {
         <OtherLinks>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/chapters">Chapters</NavLink>
-          <OffsiteLink href="https://www.instagram.com/hueartdump/">
-            <InstagramIcon />
-          </OffsiteLink>
         </OtherLinks>
       </Navbar>
       <NavbarSpacer />
