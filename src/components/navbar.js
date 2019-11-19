@@ -37,6 +37,9 @@ const TitleLink = styled(Link)`
   color: ${props => props.theme.colors.header};
   text-decoration: none;
   flex: 1;
+  &:hover {
+    color: ${props => props.theme.colors.hoveredLink};
+  }
 `
 
 const Title = styled.h1`
