@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "@emotion/styled"
 import { Link, navigate } from "gatsby"
 import PageLinks from "./pagelinks"
-import { FaInstagram } from "react-icons/fa"
+import useArrowKeys from "../hooks/useArrowKeys"
 
 const Navbar = styled.nav`
   /* postion */
@@ -71,29 +71,7 @@ const NavbarSpacer = styled.div`
 `
 
 export default ({ pageInfo }) => {
-  // navigate between pages using arrow keys but only on comic pages
-  useEffect(() => {
-    const handleUserKeyPress = event => {
-      const { keyCode } = event
-
-      if (
-        keyCode === 39 &&
-        pageInfo &&
-        pageInfo.currentPage < pageInfo.lastPage
-      ) {
-        event.preventDefault()
-        navigate(`/page/${pageInfo.nextPage}`)
-      } else if (keyCode === 37 && pageInfo && pageInfo.currentPage > 1) {
-        event.preventDefault()
-        navigate(`/page/${pageInfo.previousPage}`)
-      }
-    }
-    window.addEventListener("keydown", handleUserKeyPress)
-
-    return () => {
-      window.removeEventListener("keydown", handleUserKeyPress)
-    }
-  }, [pageInfo])
+  useArrowKeys(pageInfo)
 
   return (
     <React.Fragment>
