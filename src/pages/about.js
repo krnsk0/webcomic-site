@@ -57,7 +57,6 @@ const InstagramIcon = styled(FaInstagram)`
     top: 2px;
   }
   margin-right: 0.2em;
-  font-size: 1.1em;
 `
 
 const Spacer = styled.div`
@@ -84,7 +83,7 @@ export default props => {
           <Content>
             Built using{" "}
             <OffsiteLink href="https://www.gatsbyjs.org/">GatsbyJS</OffsiteLink>{" "}
-            by <OffsiteLink href="https://www.krnsk0.dev/">KRNSK0</OffsiteLink>.
+            by <OffsiteLink href="https://www.krnsk0.dev/">krnsk0</OffsiteLink>.
           </Content>
         </AboutBox>
       </PageContainer>
