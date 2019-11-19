@@ -11,6 +11,7 @@ const Text = styled.div`
   font-family: ${props => props.theme.fonts.body};
   text-align: center;
   margin: 1em;
+  font-size: 1.3em;
 `
 
 const Image = styled(Img)`
