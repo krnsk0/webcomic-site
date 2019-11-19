@@ -1,5 +1,7 @@
 backend:
-  name: git-gateway
+  # name: git-gateway
+  name: github
+  repo: krnsk0/webcomic-site
 media_folder: data/images
 public_folder: images
 site_url: https://awakened.netlify.com/
