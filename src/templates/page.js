@@ -17,10 +17,10 @@ const Text = styled.div`
 const Image = styled(Img)`
   width: 100%;
 
-  /* don't let it get bigger than 1032px */
+  /* don't let it get bigger than 840px */
   /* excludes all mobile but ipad pro landscape */
-  max-width: 1032px;
-  @media (min-width: 1032px) {
+  max-width: 840px;
+  @media (min-width: 840px) {
     margin: 5em auto 1em auto;
   }
 `
