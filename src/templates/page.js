@@ -42,7 +42,11 @@ export default props => {
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
       <PageContainer>
-        <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+        {props.data.file ? (
+          <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+        ) : (
+          <div>Image Not Found></div>
+        )}
         <Text dangerouslySetInnerHTML={{ __html: props.pageContext.body }} />
         <FooterSpacer />
       </PageContainer>
