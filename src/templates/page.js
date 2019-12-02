@@ -29,6 +29,23 @@ const FooterSpacer = styled.div`
   height: 4em;
 `
 
+const Box = styled.div`
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* style */
+  padding: 2em 1em 2em 1em;
+`
+
+const Title = styled.h2`
+  color: ${props => props.theme.colors.header};
+  font-family: ${props => props.theme.fonts.header};
+  font-size: 1.3em;
+`
+
 export default props => {
   const { page_number, total_count } = props.pageContext
 
@@ -45,7 +62,9 @@ export default props => {
         {props.data.file ? (
           <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
         ) : (
-          <div>Image Not Found></div>
+          <Box>
+            <Title>Not found: ${props.pageContext.image}</Title>
+          </Box>
         )}
         <Text dangerouslySetInnerHTML={{ __html: props.pageContext.body }} />
         <FooterSpacer />
