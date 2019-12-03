@@ -6,15 +6,11 @@ import Img from "gatsby-image"
 
 const PageContainer = styled.div``
 
-const Text = styled.div`
-  color: ${props => props.theme.bodyTextColor};
-  font-family: ${props => props.theme.bodyFont};
-  text-align: center;
-  margin: 1em;
-  font-size: 1.3em;
+const Image = styled(Img)`
+  width: 100%;
 `
 
-const Image = styled(Img)`
+const ImageContainer = styled.div`
   width: 100%;
 
   /* don't let it get bigger than 840px */
@@ -37,13 +33,27 @@ const Box = styled.div`
   justify-content: center;
 
   /* style */
-  padding: 2em 1em 2em 1em;
+  background-color: ${props => props.theme.navbarBgColor};
+  color: ${props => props.theme.bodyTextColor};
+  padding: 1em 1em 1em 1em;
 `
 
 const Title = styled.h2`
   color: ${props => props.theme.headerColor};
   font-family: ${props => props.theme.headerFont};
   font-size: 1.3em;
+`
+
+const Text = styled.div`
+  color: ${props => props.theme.bodyTextColor};
+  font-family: ${props => props.theme.bodyFont};
+  text-align: left;
+  margin: 1em;
+  font-size: 1em;
+
+  & p {
+    margin-bottom: 1em;
+  }
 `
 
 export default props => {
@@ -59,14 +69,23 @@ export default props => {
   return (
     <Layout title={`Page ${page_number}`} pageInfo={pageInfo}>
       <PageContainer>
-        {props.data.file ? (
-          <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
-        ) : (
+        <ImageContainer>
+          {props.data.file ? (
+            <Image fluid={props.data.file.childImageSharp.fluid} alt="" />
+          ) : (
+            <Box>
+              <Title>Not found: ${props.pageContext.image}</Title>
+            </Box>
+          )}
           <Box>
-            <Title>Not found: ${props.pageContext.image}</Title>
+            <Text>{props.pageContext.date}</Text>
+            {props.pageContext.body && (
+              <Text
+                dangerouslySetInnerHTML={{ __html: props.pageContext.body }}
+              />
+            )}
           </Box>
-        )}
-        <Text dangerouslySetInnerHTML={{ __html: props.pageContext.body }} />
+        </ImageContainer>
         <FooterSpacer />
       </PageContainer>
     </Layout>
