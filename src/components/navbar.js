@@ -18,7 +18,7 @@ const Navbar = styled.nav`
   align-items: center;
 
   /* style */
-  background-color: ${props => props.theme.colors.navbarBg};
+  background-color: ${props => props.theme.navbarBgColor};
 `
 
 const MediaQueryContainer = styled.div`
@@ -34,17 +34,17 @@ const MediaQueryContainer = styled.div`
 `
 
 const TitleLink = styled(Link)`
-  color: ${props => props.theme.colors.header};
+  color: ${props => props.theme.headerColor};
   text-decoration: none;
   flex: 1;
   &:hover {
-    color: ${props => props.theme.colors.hoveredLink};
+    color: ${props => props.theme.hoveredLinkColor};
   }
 `
 
 const Title = styled.h1`
   margin: 0.2em;
-  font-family: ${props => props.theme.fonts.header};
+  font-family: ${props => props.theme.headerFont};
   font-size: 2em;
 `
 
@@ -55,14 +55,14 @@ const OtherLinks = styled.div`
 `
 
 const NavLink = styled(Link)`
-  color: ${props => props.theme.colors.link};
-  font-family: ${props => props.theme.fonts.body};
+  color: ${props => props.theme.linkColor};
+  font-family: ${props => props.theme.bodyFont};
   margin-right: 0.7em;
   text-decoration: none;
   font-size: 1.2em;
 
   &:hover {
-    color: ${props => props.theme.colors.hoveredLink};
+    color: ${props => props.theme.hoveredLinkColor};
   }
 `
 

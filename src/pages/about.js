@@ -23,7 +23,7 @@ const AboutBox = styled.div`
   justify-content: center;
 
   /* style */
-  background-color: ${props => props.theme.colors.navbarBg};
+  background-color: ${props => props.theme.navbarBgColor};
   padding: 2em 1em 2em 1em;
 `
 
@@ -34,8 +34,8 @@ const Text = styled.div`
   h4,
   h5,
   h6 {
-    color: ${props => props.theme.colors.header};
-    font-family: ${props => props.theme.fonts.header};
+    color: ${props => props.theme.headerColor};
+    font-family: ${props => props.theme.headerFont};
     font-size: 1.3em;
     text-align: center;
   }
@@ -49,16 +49,16 @@ const Text = styled.div`
   div {
     text-align: center;
     margin-top: 1em;
-    color: ${props => props.theme.colors.link};
-    font-family: ${props => props.theme.fonts.body};
+    color: ${props => props.theme.linkColor};
+    font-family: ${props => props.theme.bodyFont};
     font-size: 1em;
   }
 
   a {
-    color: ${props => props.theme.colors.link};
-    font-family: ${props => props.theme.fonts.body};
+    color: ${props => props.theme.linkColor};
+    font-family: ${props => props.theme.bodyFont};
     &:hover {
-      color: ${props => props.theme.colors.hoveredLink};
+      color: ${props => props.theme.hoveredLinkColor};
     }
   }
 `

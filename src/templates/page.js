@@ -7,8 +7,8 @@ import Img from "gatsby-image"
 const PageContainer = styled.div``
 
 const Text = styled.div`
-  color: ${props => props.theme.colors.bodyText};
-  font-family: ${props => props.theme.fonts.body};
+  color: ${props => props.theme.bodyTextColor};
+  font-family: ${props => props.theme.bodyFont};
   text-align: center;
   margin: 1em;
   font-size: 1.3em;
@@ -41,8 +41,8 @@ const Box = styled.div`
 `
 
 const Title = styled.h2`
-  color: ${props => props.theme.colors.header};
-  font-family: ${props => props.theme.fonts.header};
+  color: ${props => props.theme.headerColor};
+  font-family: ${props => props.theme.headerFont};
   font-size: 1.3em;
 `
 

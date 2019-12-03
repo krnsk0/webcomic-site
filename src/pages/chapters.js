@@ -24,12 +24,12 @@ const ChapterBox = styled.nav`
   justify-content: center;
 
   /* style */
-  background-color: ${props => props.theme.colors.navbarBg};
+  background-color: ${props => props.theme.navbarBgColor};
 `
 
 const Title = styled.h2`
-  color: ${props => props.theme.colors.header};
-  font-family: ${props => props.theme.fonts.header};
+  color: ${props => props.theme.headerColor};
+  font-family: ${props => props.theme.headerFont};
   margin-top: 1em;
 `
 
@@ -39,10 +39,10 @@ const ChapterLinkContainer = styled.li`
 `
 
 const ChapterLink = styled(Link)`
-  color: ${props => props.theme.colors.link};
-  font-family: ${props => props.theme.fonts.body};
+  color: ${props => props.theme.linkColor};
+  font-family: ${props => props.theme.bodyFont};
   &:hover {
-    color: ${props => props.theme.colors.hoveredLink};
+    color: ${props => props.theme.hoveredLinkColor};
   }
 `
 

@@ -1,0 +1,11 @@
+{
+  "navbarBgColor": "#0D1F2D",
+  "pageBgColor": "#4357AD",
+  "headerColor": "#E4DFDA",
+  "linkColor": "#9EA3B0",
+  "inactiveLinkColor": "#113754",
+  "hoveredLinkColor": "#8bcbe0",
+  "bodyTextColor": "#D4CFCA",
+  "headerFont": "Fredoka One",
+  "bodyFont": "Open Sans"
+}

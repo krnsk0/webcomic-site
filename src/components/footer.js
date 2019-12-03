@@ -15,7 +15,7 @@ const Footer = styled.nav`
   align-items: center;
 
   /* style */
-  background-color: ${props => props.theme.colors.navbarBg};
+  background-color: ${props => props.theme.navbarBgColor};
   font-size: 3.6em;
 
   /* turn off footer on desktop and landscape ipad */

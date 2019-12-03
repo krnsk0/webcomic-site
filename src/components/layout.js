@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 
-const theme = require("../theme")
+const theme = require("../../data/config/theme.json")
 
 const globalStyles = css`
   html {
@@ -22,7 +22,7 @@ const globalStyles = css`
       font-size: 20px;
     }
 
-    background-color: ${theme.colors.pageBg};
+    background-color: ${theme.pageBgColor};
   }
 `
 

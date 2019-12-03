@@ -5,18 +5,18 @@ import { Link } from "gatsby"
 const PageLinksWrapper = styled.div``
 
 const ActiveLink = styled(Link)`
-  color: ${props => props.theme.colors.link};
-  font-family: ${props => props.theme.fonts.body};
+  color: ${props => props.theme.linkColor};
+  font-family: ${props => props.theme.bodyFont};
   margin: 0.3em;
   text-decoration: none;
   &:hover {
-    color: ${props => props.theme.colors.hoveredLink};
+    color: ${props => props.theme.hoveredLinkColor};
   }
 `
 
 const InactiveLink = styled.span`
-  color: ${props => props.theme.colors.inactiveLink};
-  font-family: ${props => props.theme.fonts.body};
+  color: ${props => props.theme.inactiveLinkColor};
+  font-family: ${props => props.theme.bodyFont};
   margin: 0.3em;
   text-decoration: none;
 `

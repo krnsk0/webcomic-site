@@ -1,4 +1,7 @@
-const theme = require("./src/theme")
+const fs = require("fs")
+const themePath = "./data/config/theme.json"
+
+const theme = JSON.parse(fs.readFileSync(themePath))
 
 module.exports = {
   siteMetadata: {
@@ -39,9 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        fonts: Object.values(theme.fonts).map(fontName => ({
-          family: fontName,
-        })),
+        fonts: [{ family: theme.headerFont }, { family: theme.bodyFont }],
       },
     },
     {
