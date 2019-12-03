@@ -1,11 +1,11 @@
 {
-  "navbarBgColor": "#0D1F2D",
-  "pageBgColor": "#4357AD",
-  "headerColor": "#E4DFDA",
   "linkColor": "#9EA3B0",
-  "inactiveLinkColor": "#113754",
   "hoveredLinkColor": "#8bcbe0",
+  "navbarBgColor": "#0D1F2D",
+  "pageBgColor": "#101010",
+  "bodyFont": "Open Sans",
   "bodyTextColor": "#D4CFCA",
+  "headerColor": "#E4DFDA",
   "headerFont": "Fredoka One",
-  "bodyFont": "Open Sans"
+  "inactiveLinkColor": "#113754"
 }
