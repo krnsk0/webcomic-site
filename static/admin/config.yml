@@ -59,3 +59,14 @@ collections:
         widget: number
         valueType: int
         min: 1
+  - name: config
+    label: Config
+    files:
+      - name: about
+        label: About Page
+        file: data/config/about.md
+        fields:
+          - label: About Page Tet
+            name: body
+            required: true
+            widget: markdown

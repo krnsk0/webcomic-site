@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Layout from "../components/layout"
-import { FaInstagram } from "react-icons/fa"
 
 const PageContainer = styled.div`
   /* position */

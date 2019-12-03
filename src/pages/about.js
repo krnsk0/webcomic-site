@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Layout from "../components/layout"
-import { FaInstagram } from "react-icons/fa"
+import { graphql } from "gatsby"
 
 const PageContainer = styled.div`
   /* position */
@@ -27,40 +27,40 @@ const AboutBox = styled.div`
   padding: 2em 1em 2em 1em;
 `
 
-const Title = styled.h2`
-  color: ${props => props.theme.colors.header};
-  font-family: ${props => props.theme.fonts.header};
-  font-size: 1.3em;
-`
-
-const Content = styled.div`
-  text-align: center;
-  margin-top: 1em;
-  color: ${props => props.theme.colors.link};
-  font-family: ${props => props.theme.fonts.body};
-  font-size: 1em;
-`
-
-const OffsiteLink = styled.a`
-  color: ${props => props.theme.colors.link};
-  font-family: ${props => props.theme.fonts.body};
-  &:hover {
-    color: ${props => props.theme.colors.hoveredLink};
+const Text = styled.div`
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: ${props => props.theme.colors.header};
+    font-family: ${props => props.theme.fonts.header};
+    font-size: 1.3em;
+    text-align: center;
   }
-`
 
-const InstagramIcon = styled(FaInstagram)`
-  position: relative;
-  top: 5px;
-  /* on mobile, no offset  */
-  @media (hover: none) {
-    top: 2px;
+  h1:nth-child(n + 2) {
+    margin-top: 2em;
   }
-  margin-right: 0.2em;
-`
 
-const Spacer = styled.div`
-  height: 3em;
+  & p,
+  span,
+  div {
+    text-align: center;
+    margin-top: 1em;
+    color: ${props => props.theme.colors.link};
+    font-family: ${props => props.theme.fonts.body};
+    font-size: 1em;
+  }
+
+  a {
+    color: ${props => props.theme.colors.link};
+    font-family: ${props => props.theme.fonts.body};
+    &:hover {
+      color: ${props => props.theme.colors.hoveredLink};
+    }
+  }
 `
 
 export default props => {
@@ -68,25 +68,27 @@ export default props => {
     <Layout title={`Chapters`}>
       <PageContainer>
         <AboutBox>
-          <Title>AUTHOR</Title>
-          <Content>A webcomic by HUE</Content>
-          <Content>
-            <OffsiteLink href="https://www.instagram.com/hueartdump/">
-              <InstagramIcon />
-              Instagram
-            </OffsiteLink>
-            <Content>© HUE 2019</Content>
-          </Content>
-
-          <Spacer />
-          <Title>SITE DESIGN</Title>
-          <Content>
-            Built using{" "}
-            <OffsiteLink href="https://www.gatsbyjs.org/">GatsbyJS</OffsiteLink>{" "}
-            by <OffsiteLink href="https://www.krnsk0.dev/">krnsk0</OffsiteLink>.
-          </Content>
+          <Text
+            dangerouslySetInnerHTML={{
+              __html: props.data.allMarkdownRemark.edges[0].node.html,
+            }}
+          />
         </AboutBox>
       </PageContainer>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/.*/data/config/about.md/" } }
+    ) {
+      edges {
+        node {
+          html
+        }
+      }
+    }
+  }
+`
