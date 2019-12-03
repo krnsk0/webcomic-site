@@ -19,6 +19,7 @@ const Navbar = styled.nav`
 
   /* style */
   background-color: ${props => props.theme.navbarBgColor};
+  user-select: none;
 `
 
 const MediaQueryContainer = styled.div`
