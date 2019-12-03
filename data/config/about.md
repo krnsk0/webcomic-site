@@ -1,6 +1,6 @@
 # AUTHOR
 
-A webcomic by HUE
+A webcomic by HUE!
 
 [Instagram](https://www.instagram.com/hueartdump/)
 
