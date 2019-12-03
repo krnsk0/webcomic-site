@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import PageLinks from "./pagelinks"
 import useArrowKeys from "../hooks/useArrowKeys"
 

@@ -17,6 +17,7 @@ const Footer = styled.nav`
   /* style */
   background-color: ${props => props.theme.navbarBgColor};
   font-size: 3.6em;
+  user-select: none;
 
   /* turn off footer on desktop and landscape ipad */
   @media (min-height: 600px) and (orientation: landscape) {
